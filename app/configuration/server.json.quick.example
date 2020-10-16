@@ -1,0 +1,6 @@
+{
+	"server": {
+		"web_root": "ui",
+		"port": 4000
+	}
+}

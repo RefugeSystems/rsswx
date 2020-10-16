@@ -1,0 +1,8 @@
+{
+	"database": {
+		"id": "SQLite Local Dev",
+		"loglevel": 30,
+		"type": "sqlite",
+		"file": "./universe.sqldb"
+	}
+}

@@ -1,5 +1,10 @@
 {
-	"core": {
-		"database": "test_database"
+	"systemLog": {
+		"name": "rsswx",
+		"streams": [{
+			"path": "./application.log",
+			"level": "info",
+			"type": "rotating-file"
+		}]
 	}
 }
