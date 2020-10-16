@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>RS-SW</title>
+		<link rel="apple-touch-icon" type="image/png" href="./favicon.png" />
+		<link rel="icon" type="image/png" href="./favicon.png" />
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		
+		<meta name="author" content="administrator@refugesystems.net" />
+		<meta name="copyright" content="Refuge Systems, LLC 2020" />
+		<meta name="keywords" content="star wars, ffg, tabletop, rpg, swrpg, fantasy flight games, edge of the empitre, eote" />
+		<meta name="description" content="An in house project to supllement the Fantasy Flight Games (FFG) Star Wars TableTop RPG." />
+		<meta name="twitter:description" content="RefugeSystems FFG Star-Wars Extension Project" />
+		<meta name="language" content="EN" />
+		<meta name="theme-color" content="#617EB8" />
+		
+		<meta name="application-name" content="RefugeSystems FFG Star-Wars Extension Project" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		
+		<meta name="og:title" content="RSSWX" />
+		<meta name="og:site_name" content="Refuge Systems"/>
+		<meta name="og:description" content="RefugeSystems FFG Star-Wars Extension Project" />
+		<meta name="og:image" content="http://refugesystems.net/images/rook.blue.png"/>
+		<meta name="og:email" content="administrator@refugesystems.net"/>
+		
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:url" content="https://refugesystems.net/projects/rsswx/app/">
+		<meta name="twitter:title" content="RefugeSystems FFG Star-Wars Extension Project">
+		<meta name="twitter:description" content="An in house project to supllement the Fantasy Flight Games (FFG) Star Wars TableTop RPG.">
+		<meta name="twitter:image" content="https://refugesystems.net/images/favicon.png">
+		<meta name="twitter:creator" content="@aetherwalker">
+		
+		<link type="text/css" href="./main.css" rel="stylesheet" />
+		<link rel="manifest" href="./manifest.json" />
+	</head>
+	<body>
+		<noscript>Javascript is required for this App to function</noscript>
+		<div id="banner">
+			<banner-panel></banner-panel>
+		</div>
+		<div id="game">
+			<router-view></router-view>
+		</div>
+		<div id="info">
+			<info-panel></info-panel>
+		</div>
+		
+		<link type="text/css" href="./fonts/starwars-glyphicons.css" rel="stylesheet" />
+		<link type="text/css" href="./fonts/xwing-miniatures.css" rel="stylesheet" />
+		<link type="text/css" href="./fonts/rpg-awesome.css" rel="stylesheet" />
+		<link type="text/css" href="./fonts/rsswx.css" rel="stylesheet" />
+		<link type="text/css" href="./webfonts/all.css" rel="stylesheet" />
+		<script src="./externals.js"></script>
+		<script src="./main.js"></script>
+		<script type="text/javascript">
+			if(navigator.serviceWorker) {
+				var scope = location.href.indexOf("127.0.0.1") !== -1 || location.href.indexOf("localhost") !== -1?"/":"/projects/rsswx/app/";
+				
+				navigator.serviceWorker.register("./worker.js", {
+					"scope": scope
+				}).then(function(registration) {
+					// console.log("Service Worker Registered: ", registration);
+				}).catch(function(error) {
+					console.error("Service Worker Registration Error: ", error);
+				});
+
+				navigator.serviceWorker.ready.then(function(registration) {
+					// console.log("Service Worker Ready: ", registration);
+				});
+			}
+		</script>
+	</body>
+</html>
