@@ -1,6 +1,6 @@
 {
 	"database": {
-		"id": "SQLite Local Dev",
+		"id": "Universe Database",
 		"loglevel": 30,
 		"type": "sqlite",
 		"file": "./universe.sqldb"
