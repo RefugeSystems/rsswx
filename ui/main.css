@@ -2088,13 +2088,21 @@ form {
 .rs-component.rs-field input {
   font-size: 13px;
   padding: 3px;
+  border-color: #EAEFF9;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
 }
 .rs-component.rs-field textarea,
 .rs-component.rs-field input {
   user-select: all;
 }
 .rs-component.rs-field select {
+  background: transparent;
+  color: #EAEFF9;
   max-width: 160px;
+}
+.rs-component.rs-field option {
+  background: #000000;
 }
 .rs-component.rs-field textarea {
   width: 90%;
@@ -4623,6 +4631,9 @@ form {
   line-height: 30px;
   height: 30px;
   width: 30px;
+}
+.rs-component.component-viewer .menu select.control {
+  padding: 5px;
 }
 .rs-component.component-viewer .menu .search {
   white-space: nowrap;

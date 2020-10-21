@@ -2353,6 +2353,9 @@ form {
 	input {
 		font-size: 13px;
 		padding: 3px;
+		border-color: @rsWhite;
+		border-style: solid;
+		border-width: 0px 0px 2px 0px;
 	}
 	textarea,
 	input {
@@ -2360,7 +2363,13 @@ form {
 	}
 
 	select {
+		background: transparent;
+		color: @rsWhite;
 		max-width: 160px;
+	}
+		
+	option {
+		background: @rsBlack;
 	}
 
 	textarea {
@@ -2384,7 +2393,6 @@ form {
 		padding: 3px;
 		border: 1px solid @rsGray;
 		background: @rsWhite;
-
 		.referenced {
 			position: relative;
 			display: inline-flex;
@@ -5599,6 +5607,10 @@ form {
 				height: 30px;
 				width: 30px;
 			}
+		}
+		
+		select.control {
+			padding: 5px;
 		}
 
 		.search {

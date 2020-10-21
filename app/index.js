@@ -289,6 +289,7 @@ configuration._await
 	utilityHandler.registerNoun("entity", models, handlers, require("./models/entity.js"));
 	utilityHandler.registerNoun("party", models, handlers, require("./models/party.js"));
 	utilityHandler.registerNoun("event", models, handlers, require("./models/event.js"));
+	utilityHandler.registerNoun("minigame", models, handlers, require("./models/minigame.js"));
 
 	utilityHandler.registerNoun("widgetconfiguration", models, handlers);
 	utilityHandler.registerNoun("modifierattrs", models, handlers);
@@ -342,6 +343,7 @@ configuration._await
 	handlers.push(require("./handlers/items/draw"));
 	handlers.push(require("./handlers/session/destiny_light"));
 	handlers.push(require("./handlers/session/destiny_dark"));
+	handlers.push(require("./handlers/data"));
 	handlers.push({
 		"process": utilityHandler.deleteProcessor,
 		"events": ["player:delete:player"]

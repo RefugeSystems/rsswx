@@ -11,8 +11,8 @@ module.exports = {
 		console.log("Create Player Entity: ", event);
 		// TODO: Clean Up Data Insertion
 		if(locked) {
-			console.log("Character creation blocked: Catabase locked");
-			
+			console.log("Character creation blocked: Database locked");
+
 		} else if(event.player.master) {
 			// Build NPC
 			if(!event.data.id) {
@@ -21,7 +21,7 @@ module.exports = {
 			event.data.owners = [];
 			event.data.classification = "character";
 			event.player.entity = event.data.id;
-			
+
 			universe.collections.entity.insertOne(event.data)
 			.then(function() {
 				universe.nouns.entity[event.data.id] = event.data;
@@ -39,14 +39,14 @@ module.exports = {
 //				console.log("Notify Character: ", notify);
 			})
 			.catch(universe.generalError);
-			
+
 		} else if(!event.player.entity && event.data.id.indexOf(event.player.id) !== -1 && event.data.id.startsWith("character")) {
 			// Build Character
 			event.data.owners = [];
 			event.data.owners.push(event.player.id);
 			event.data.classification = "character";
 			event.player.entity = event.data.id;
-			
+
 			universe.collections.player.updateOne({"id":event.player.id}, {"$set":{"entity":event.data.id}})
 			.then(function() {
 				return universe.collections.entity.insertOne(event.data);
@@ -65,7 +65,7 @@ module.exports = {
 				notify.id = event.data.id;
 				universe.emit("model:modified", notify);
 //				console.log("Notify Character: ", notify);
-				
+
 				// Player Updated
 				notify = {};
 				notify.modification = {
