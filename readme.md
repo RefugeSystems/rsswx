@@ -14,6 +14,8 @@ Once the installation and file renaming is complete, run `node app`.
 
 Using the quick settings, you can now go to `http://127.0.0.1:4000/` in a browser and login as "master" with no passcode. You should not need to change the address.
 
+To setup access for other people, go to `/#/nouns/player` and the current caveat is that the `id` and `username` must match.
+
 Note: This requires NodeJS v10 or higher.
 
 # Configuring your Universe
